@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Level3
   - NiceWords
+  - ExitLevel3
   layers:
   - Default
   - TransparentFX

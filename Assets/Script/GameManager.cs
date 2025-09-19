@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
 {
     //public GameObject pauseMenu;
     public GameObject Level3Enemy;
+    public GameObject Congrats;
     public GameObject ThankYouClip;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,15 +32,14 @@ public class GameManager : MonoBehaviour
         else if (collision.gameObject.CompareTag("Level3"))
         {
             Level3Enemy.SetActive(true);
+        } 
+        else if (collision.gameObject.CompareTag("ExitLevel3"))
+        {
+                Level3Enemy.SetActive(false);
+                Congrats.SetActive(true);
         }
         else if (collision.gameObject.CompareTag("NiceWords")) {
-
-            //if (ThankYouClip != null && !ThankYouClip.isPlaying) 
-            //{
-            //    ThankYouClip.Play();
-            //}
             ThankYouClip.SetActive(true);
-
         }
     }
     private void OnCollisionExit(Collision collision) {
