@@ -2,10 +2,9 @@ using UnityEngine;
 
 public class MouseMovement : MonoBehaviour
 {
-    [SerializeField] private GameObject teacher;
-    [SerializeField] private float reappearInterval = 1f;
-    private float timer;
-    private Vector3 offset = new Vector3(2f,0, 0);
+    public float moveSpeed = 10f;
+    private Vector3 moveDirection = Vector3.zero;
+    public int direction = 1;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,14 +14,14 @@ public class MouseMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-        if (timer > reappearInterval) {
-            Vector3 offsetWorld = teacher.transform.right * offset.x + teacher.transform.up * offset.y;
-            transform.position = teacher.transform.position  + offsetWorld;
-            timer = 0f;
-        }
-        //Vector3 direction = (teacher.position - transform.position).normalized;
-        Vector3 movement = Vector3.down * 15f * Time.deltaTime;
+        Vector3 movement = Vector3.down * direction * moveSpeed * Time.deltaTime;
         transform.Translate(movement);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Walls")){
+            direction = -direction;
+        }
     }
 }
