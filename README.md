@@ -8,5 +8,5 @@ https://skfb.ly/oCWJu
 https://skfb.ly/oCWJu
 https://polyhaven.com/a/SchoolDesk_01
 https://skfb.ly/oRTAu
-Something New: I added some enemy movements and rotation scripts, as well sound sound clips
+Something New: I added some enemy movements and rotation scripts, as well sound sound clips. I learned more about Unity 3D transformation and related functions. I also leaned about how to attach sound effects to a game object.
 
