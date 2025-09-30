@@ -1,5 +1,6 @@
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -26,7 +27,8 @@ public class GameManager : MonoBehaviour
         {
             //Time.timeScale = 0f;
             //pauseMenu.SetActive(true);
-            EditorApplication.isPlaying = false;
+            //EditorApplication.isPlaying = false;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         //Activate level 3 enemy
         else if (collision.gameObject.CompareTag("Level3"))

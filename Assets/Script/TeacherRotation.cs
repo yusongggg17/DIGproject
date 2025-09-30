@@ -1,7 +1,8 @@
-using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 using System.Collections;
 using UnityEditor;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using static UnityEngine.GraphicsBuffer;
 
 public class TeacherRotation : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class TeacherRotation : MonoBehaviour
                 if (isMoving)
                 {
                     Debug.Log("is moving");
-                    EditorApplication.ExitPlaymode();
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 }
                 else
                 {
